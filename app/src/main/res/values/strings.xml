@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">FilmsApp</string>
+    <string name="panel">ПАНЕЛЬ</string>
+    <string name="catalogFilms">ФИЛЬМЫ</string>
+    <string name="catalogAction">БОЕВИК</string>
+    <string name="drama">ДРАМА</string>
+    <string name="comedy">КОМЕДИЯ</string>
+    <string name="catalogCategories">ЖАНРЫ</string>
+    <string name="infoFilm">ОПИСАНИЕ</string>
+
+    <string name="addCategory">ДОБАВИТЬ ЖАНР</string>
+    <string name="addFilm">ДОБАВИТЬ ФИЛЬМ</string>
+
+    <string name="editCategory">РЕДАКТИРОВАНИЕ ЖАНРА</string>
+    <string name="editFilm">РЕДАКТИРОВАНИЕ ФИЛЬМА</string>
+    <string name="endEdit">ЗАВЕРШИТЬ РЕДАКТИРОВАНИЕ</string>
+
+
+    <string name="labelEnterCategory">Выберите название жанра</string>
+    <string name="newEnterCategory">Введите новое название жанра</string>
+    <string name="labelEnterNameFilm">Введите название фильма</string>
+    <string name="labelEnterTimeFilm">Введите длительность фильма</string>
+    <string name="labelEnterInfoFilm">Введите описание фильма</string>
+    <string name="labelEditCategory">Выбор жанра</string>
+
+    <string name="deleteAllCategories">УДАЛИТЬ ВСЕ ЖАНРЫ</string>
+    <string name="deleteAllFilms">УДАЛИТЬ ВСЕ ФИЛЬМЫ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
