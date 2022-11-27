@@ -18,8 +18,10 @@ import com.example.filmapp.model.CategoryModel
 import com.example.filmapp.repositories.CategoryRepository
 import com.example.filmapp.viewModels.CategoryFactory
 import com.example.filmapp.viewModels.CategoryViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class TabChoiceCategories : Fragment() {
+    //BottomSheetDialogFragment(), View.OnClickListener, View.OnKeyListener
     private var binding: TabChoiceCategoriesBinding? = null
     private var categoryRepository: CategoryRepository? = null
     private var categoryViewModel: CategoryViewModel? = null
@@ -60,17 +62,35 @@ class TabChoiceCategories : Fragment() {
     }
 
     private fun choiceCategory(categoryModel: CategoryModel){
-        val tabPanel = TabPanel()
-        val parameters = Bundle()
-        parameters.putString("idCategory", categoryModel.id.toString())
-        parameters.putString("nameCategory", categoryModel.name)
-        tabPanel.arguments = parameters
 
-
-        (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(R.id.content, TabPanel()).commit()
+        (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(R.id.content, TabPanel(categoryModel.name.toString())).commit()
     }
 
 
+
+//    override fun onClick(view: View) {
+//        when(view.id){
+//            R.id.choiceCategory ->{
+//
+//
+//
+//
+//            }
+//        }
+//    }
+//
+//    override fun onKey(view: View, i: Int, keyEvent: KeyEvent): Boolean {
+//        when(view.id){
+//            R.id.choiceCategory ->{
+//                if(keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER) {
+//                    choiceCategory(view as CategoryModel)
+//                    return true
+//                }
+//
+//            }
+//        }
+//        return false
+//    }
 
 
 }

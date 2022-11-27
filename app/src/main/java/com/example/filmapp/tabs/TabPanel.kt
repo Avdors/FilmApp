@@ -18,7 +18,7 @@ import com.example.filmapp.viewModels.CategoryViewModel
 import com.example.filmapp.viewModels.FilmFactory
 import com.example.filmapp.viewModels.FilmViewModel
 
-class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener{
+class TabPanel(private var nameCategories: String = "") : Fragment(), View.OnClickListener, View.OnKeyListener{
 
     private var binding: TabPanelBinding? = null
     private var categoryRepository: CategoryRepository? = null
@@ -34,9 +34,9 @@ class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var nameCategory = arguments?.getString("nameCategory").toString()
-        if(nameCategory != null){
-        binding?.enterNameCategory?.setText(arguments?.getString("nameCategory").toString())
+
+        if(nameCategories != ""){
+        binding?.enterNameCategory?.setText(nameCategories)
 
         }
 
@@ -69,7 +69,10 @@ class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener{
 
         binding?.buttonEditCategory?.setOnClickListener(this)
 
+        if(nameCategories != ""){
+            binding?.enterNameCategory?.setText(nameCategories)
 
+        }
 
         return binding?.root
     }
@@ -91,8 +94,11 @@ class TabPanel : Fragment(), View.OnClickListener, View.OnKeyListener{
 
             }
             R.id.buttonEditCategory -> {
-
                 (context as FragmentActivity).supportFragmentManager.beginTransaction().replace(R.id.content, TabChoiceCategories()).commit()
+//                val tabChoiseCategories = TabChoiceCategories()
+//
+//
+//                tabChoiseCategories.show((context as FragmentActivity).supportFragmentManager, "editCategory")
                 }
 
 
